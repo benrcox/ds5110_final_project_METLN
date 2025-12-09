@@ -31,14 +31,14 @@ def last_active_day_label(l):
         return(l)
 
 def first_active_day_label(l):
-    """
-    Iterates through log and labels entries where it is the first seen appearance of that account ID
-    Param: l: the subscriber log
-    Returns: l: the subscriber log
-    """
-    l = l.sort_values(['AccoutID','LogDate'])
-    l['first_active_day'] = l.groupby('AccoutID').cumcount() == 0
-    return(l)
+        """
+        Iterates through log and labels entries where it is the first seen appearance of that account ID
+        Param: l: the subscriber log
+        Returns: l: the subscriber log
+        """
+        l = l.sort_values(['AccoutID','LogDate'])
+        l['first_active_day'] = l.groupby('AccoutID').cumcount() == 0
+        return(l)
 
 def main():
 
